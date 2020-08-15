@@ -12,7 +12,7 @@ class Student
   end
   
   def self.create_table
-    sql = <<- SQL 
+    sql = <<-SQL 
     CREATE TABLE IF NOT EXISTS students (
       id INTEGER PRIMARY KEY,
       name TEXT,
@@ -29,7 +29,7 @@ class Student
       if self.id
         self.update
       else
-        sql = <<- SQL
+        sql = <<-SQL
         INSERT INTO students(name, grade)
         VALUES(?, ?)
         SQL
@@ -51,7 +51,7 @@ class Student
   end
   
   def self.find_by_name(name)
-    sql = <<- SQL
+    sql = <<-SQL
     SELECT * FROM students
     WHERE name = ?
     LIMIT 1 
@@ -63,7 +63,7 @@ class Student
   end
   
   def update
-    sql = <<- SQL 
+    sql = <<-SQL 
     UPDATE students
     SET name = ?, grade = ?
     WHERE id = ?
